@@ -13,4 +13,5 @@
 **якщо MCU має 5-ти вольтову логіку, то конвертора логічних рівнів не треба**
 
 # Bluetooth ESP32<->RaspberryPi
-Hello world!
+- Код для ESP32 **ESP_BT_Serial\\ESP_BT_Serial.ino**
+- Код для Raspberry Pi **RPi_BT_Serial\\RPi_BT_Serial.py**
