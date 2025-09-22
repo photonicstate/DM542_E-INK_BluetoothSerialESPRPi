@@ -7,9 +7,10 @@
 
 - Приклад роботи з ним, також pinout є в **STM32F411CEU6_DM542\\Core\\src\\main.c**
 - Схема підключення:  
-
-
-![Reference image](/_images/test.jpg)
+  
+![Reference image](/_images/test.jpg)  
+  
+**якщо MCU має 5-ти вольтову логіку, то конвертора логічних рівнів не треба**
 
 # Bluetooth ESP32<->RaspberryPi
 Hello world!

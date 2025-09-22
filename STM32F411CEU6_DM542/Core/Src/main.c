@@ -105,27 +105,32 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim3);  // start the Timer1
 
-  HAL_GPIO_WritePin(ENA_GPIO_Port, ENA_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(DIR_GPIO_Port, DIR_Pin, GPIO_PIN_RESET);
+  uint32_t delay_motor = 1000;
+
+  HAL_GPIO_WritePin(ENA_GPIO_Port, ENA_Pin, GPIO_PIN_RESET);      // Керування силовою частиною драйвера
+  HAL_GPIO_WritePin(DIR_GPIO_Port, DIR_Pin, GPIO_PIN_SET);        // Керування напрямком обертання
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-      HAL_ADC_Start(&hadc1);
-      HAL_ADC_PollForConversion(&hadc1, 100);
-      uint32_t ADC_VAL = HAL_ADC_GetValue(&hadc1) + 1;
-      HAL_ADC_Stop(&hadc1);
-      uint32_t delay_motor = map(ADC_VAL, 1, 4096, 9000, 300);
+    // Код для зчитування напргуи з потенціометра та ремап цього значення в значення затримки для мотора
+//    HAL_ADC_Start(&hadc1);
+//    HAL_ADC_PollForConversion(&hadc1, 100);
+//    uint32_t ADC_VAL = HAL_ADC_GetValue(&hadc1) + 1;
+//    HAL_ADC_Stop(&hadc1);
+//    delay_motor = map(ADC_VAL, 1, 4096, 9000, 300);
+//
+//    if(ADC_VAL < 300){
+//  	  HAL_GPIO_WritePin(ENA_GPIO_Port, ENA_Pin, GPIO_PIN_SET);
+//    }
+//    
+//    else{
+//  	  HAL_GPIO_WritePin(ENA_GPIO_Port, ENA_Pin, GPIO_PIN_RESET);
+//    }
 
-      if(ADC_VAL < 300){
-    	  HAL_GPIO_WritePin(ENA_GPIO_Port, ENA_Pin, GPIO_PIN_RESET);
-      }
-      else{
-    	  HAL_GPIO_WritePin(ENA_GPIO_Port, ENA_Pin, GPIO_PIN_SET);
-      }
-
+    // Основний код для обертання мотором
 	  HAL_GPIO_WritePin(PUL_GPIO_Port, PUL_Pin, GPIO_PIN_RESET);
 	  delay_us(delay_motor);
 	  HAL_GPIO_WritePin(PUL_GPIO_Port, PUL_Pin, GPIO_PIN_SET);
