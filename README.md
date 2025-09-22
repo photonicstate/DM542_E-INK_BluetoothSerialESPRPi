@@ -1,13 +1,12 @@
 # E-Ink Display
 
 - Приклад роботи з ним, також pinout є в **GxEPD2_HelloWorld_test**
-- Бібліотека, для роботи з ним: <https://github.com/ZinggJM/GxEPD2> (є в Arduino IDE Library Manager)
+- Необхідна бібліотека: <https://github.com/ZinggJM/GxEPD2> (можна скачати в Arduino IDE через Library Manager)
 
 # DM542
 
-Приклад роботи з ним, також pinout є в **GxEPD2_HelloWorld_test**
+- Приклад роботи з ним, також pinout є в **STM32F411CEU6_DM542\\Core\\src\\main.c**
+- Схема підключення: ![Reference image](/_images/test.jpg)
 
-# E-Ink Display
+# Bluetooth ESP32<->RaspberryPi
 Hello world!
-
-![Reference image](/_images/test.jpg)
