@@ -6,7 +6,8 @@
 # DM542
 
 - Приклад роботи з ним, також pinout є в **STM32F411CEU6_DM542\\Core\\src\\main.c**
-- Схема підключення: ![Reference image](/_images/test.jpg)
+- Схема підключення: 
+![Reference image](/_images/test.jpg)
 
 # Bluetooth ESP32<->RaspberryPi
 Hello world!
